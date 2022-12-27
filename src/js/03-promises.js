@@ -33,9 +33,9 @@ function onPromiseGenerate(event) {
 // Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
 // Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
   
-  for (let i = 0; i< amount; i += 1) {
-    const delay = +delayFirst + +step * i;
-    createPromise(i+1, delay)
+  for (let i = 1; i<= amount; i += 1) {
+    const delay = +delayFirst + +step * (i-1);
+    createPromise(i, delay)
     .then(({ position, delay }) => {
       Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
     })
